@@ -27,9 +27,10 @@ RUN mkdir /root/src
 
 WORKDIR /root/src
 
-RUN apt-get -q -y install vim
 RUN git clone --recursive https://github.com/camicroscope/oss-lite.git
 
 WORKDIR /root/src/oss-lite
+
+RUN git pull
 
 CMD ["sh", "run.sh"]
