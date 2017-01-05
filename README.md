@@ -25,7 +25,7 @@ Basic API syntax:
 `{scheme}://{server}{/prefix}/{identifier}/{region}/{size}/{rotation}/{quality}.{format}`
 
 Example:
-`http://your.server/fcgi-bin/iipsrv.fcgi?IIIF=image.svs/10000,10000,400,400/full/0/default.jpg`
+`http://www.example.org/image-service/abcd1234/10000,10000,400,400/full/0/default.jpg`
 
 To learn more about image request parameters visit [IIIF Image API 2.1](http://iiif.io/api/image/2.1) webpage.
 
@@ -34,5 +34,5 @@ API syntax:
 `{scheme}://{server}{/prefix}/{identifier}/info.json`
 
 Example:
-`http://your.server/fcgi-bin/iipsrv.fcgi?IIIF=image.svs/info.json`
+`http://www.example.org/image-service/abcd1234/info.json`
 
