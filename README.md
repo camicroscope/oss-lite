@@ -7,7 +7,7 @@ To deploy oss-lite in a docker container, follow the following steps:
 * Clone this repo
 * `cd oss-lite`
 * `docker build -t oss-lite .`
-* `docker run -itd -p <host_port>:5000 -v <host_images_folder_path>:<host_images_folder_path> oss-lite`
+* `docker run -itd -p <host_port>:5000 -v <host_images_folder_path>:<docker_container_images_folder_path> oss-lite`
 
 ##Deploying without Docker
 To deploy oss-lite without Docker, follow the following steps:
