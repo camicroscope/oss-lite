@@ -7,7 +7,7 @@ FROM ubuntu:14.04
 MAINTAINER Amit Verma
 
 ### update
-RUN apt-get -q update
+RUN apt-get -q -y update
 RUN apt-get -q -y upgrade
 RUN apt-get -q -y dist-upgrade
 
