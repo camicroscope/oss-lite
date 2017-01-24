@@ -25,6 +25,10 @@ To deploy oss-lite in a docker container, follow the following steps:
 * `docker build -t oss-lite .`
 * `docker run -itd -p <host_port>:5000 -v /data/myImages/:/image-service oss-lite`
 
+While deploying it along with [Camicroscope Distro](https://github.com/camicroscope/Distro). Find out `$CAMIC_IMAGES_DIR` ([How?](https://github.com/camicroscope/Distro/blob/master/install.sh#L13)), it is the directory on the host machine where all the images are stored by the image loader. Image loader will load images with path `/data/images`.
+
+`docker run -itd -p <host_port>:5000 -v $CAMIC_IMAGES_DIR:/data/images oss-lite`
+
 ##Deploying without Docker
 To deploy oss-lite without Docker, follow the following steps:
 * Install openslide-tools and python-openslide
