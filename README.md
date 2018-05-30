@@ -1,9 +1,9 @@
-##OSS-Lite Server
+## OSS-Lite Server
 OSS-Lite (OpenSlide Server-Lite) is a lightweight python web service that implements the [IIIF Image API 2.1](http://iiif.io/api/image/2.1) specifications, and is built using the excellent digital pathology library called [OpenSlide](http://openslide.org/) 
 
-##Usage
+## Usage
 
-###Getting started
+### Getting started
 Place all the images that are to be exposed to the API in a base folder. Let's call it `/data/myImages/` for this example. The images could be organized in subfolders. E.g. 
 `/data/myImages/imageDir1`, 
 `/data/myImages/imageDir2`. 
@@ -14,7 +14,7 @@ The image files could be orgazied in the folders as:
 
 Having set up the images and deploying oss-lite using deployement instructions, the service could be accessed using the following API calls.
 
-###Image Request API
+### Image Request API
 Basic API syntax:
 `{scheme}://{server}{/filepath}/{filename_with_extension}/{region}/{size}/{rotation}/{quality}.{format}`
 
@@ -23,13 +23,13 @@ Example:
 This returns a 400x400 tile starting at the left corner <8000,9000>, in JPEG format, from an image with filename image1.svs that is placed at /data/myImages on the host machine.
 To learn more about image request parameters visit [IIIF Image API 2.1](http://iiif.io/api/image/2.1) webpage.
 
-####Image Information API
+#### Image Information API
 API syntax:
 `{scheme}://{server}{/filepath}/{filename_with_extension}/info.json`
 Example:
 `http://localhost/data/myImages/imageDir2/image1.svs/info.json`
 
-##Docker Container Deployment
+## Docker Container Deployment
 Here we assume that all the images are in the base folder `/data/myImages` on the host machine and oss-lite will be deployed in a container and accessible at `http://localhost/image-service`
 To deploy oss-lite in a docker container, follow the following steps:
 * Clone this repo
@@ -42,7 +42,7 @@ While deploying it along with [Camicroscope Distro](https://github.com/camicrosc
 
 `docker run -itd -p <host_port>:5000 -v $CAMIC_IMAGES_DIR:/data/images oss-lite`
 
-##Deploying without Docker
+## Deploying without Docker
 To deploy oss-lite without Docker, follow the following steps:
 * Install openslide-tools and python-openslide
 On Ubuntu: `sudo apt-get install openslide-tools python-openslide`
