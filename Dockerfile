@@ -33,12 +33,12 @@ RUN apt-get -q -y install git autoconf automake make libtool pkg-config cmake
 RUN mkdir /root/src
 
 WORKDIR /root/src
-#Libraries that are needed for openslide 
+#Libraries that are needed for openslide
 RUN curl -O -J -L http://downloads.sourceforge.net/lcms/lcms2-2.7.tar.gz && \
 tar -xzvf lcms2-2.7.tar.gz && \
 cd lcms2-2.7 && ./configure && \
 make -j4 && make install && \
-cd .. && rm -rf lcms2-2.7* 
+cd .. && rm -rf lcms2-2.7*
 
 RUN curl -O -J -L http://downloads.sourceforge.net/libpng/libpng-1.6.22.tar.xz && \
 tar -xvf libpng-1.6.22.tar.xz && \
@@ -50,7 +50,7 @@ RUN curl -O -J -L http://download.osgeo.org/libtiff/tiff-4.0.6.tar.gz && \
 tar -xzvf tiff-4.0.6.tar.gz && \
 cd tiff-4.0.6 && ./configure && \
 make -j4 && make install && \
-cd .. && rm -rf tiff-4.0.6* 
+cd .. && rm -rf tiff-4.0.6*
 
 #RUN apt-get install cmake3
 RUN curl -O -J -L http://downloads.sourceforge.net/openjpeg.mirror/openjpeg-2.1.0.tar.gz && \
@@ -66,10 +66,10 @@ WORKDIR /root/src
 ## get my fork from openslide source cdoe
 RUN git clone https://bitbucket.org/tcpan/openslide.git
 
-## build openslide 
+## build openslide
 WORKDIR /root/src/openslide
 RUN git checkout tags/v0.3.1
-RUN autoreconf -i 
+RUN autoreconf -i
 #RUN ./configure --enable-static --enable-shared=no
 # may need to set OPENJPEG_CFLAGS='-I/usr/local/include' and OPENJPEG_LIBS='-L/usr/local/lib -lopenjp2'
 # and the corresponding TIFF flags and libs to where bigtiff lib is installed.
@@ -80,9 +80,6 @@ RUN make install
 WORKDIR /root/src
 
 RUN git clone --recursive https://github.com/camicroscope/oss-lite.git
-
-### need build tools for building openslide and later iipsrv
-RUN apt-get -q -y install git autoconf automake make libtool pkg-config cmake
 
 
 WORKDIR /root/src/oss-lite
